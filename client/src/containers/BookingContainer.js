@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { getBookings } from '../components/BookingsService';
 import BookingsGrid from '../components/BookingsGrid';
+import BookingForm from '../components/BookingForm';
 
 const BookingContainer = () => {
 
@@ -14,11 +15,17 @@ const BookingContainer = () => {
         });
     },[]);
 
+    const addBooking = (booking) => {
+        const temp = bookings.map(g => g);
+        temp.push(booking);
+        setBookings(temp);
+    };
+
 
     return (
         <>
-        <h2>BookingContainer</h2>
-        <BookingsGrid bookings = {bookings}/>
+            <BookingForm addBooking={addBooking}/>
+            <BookingsGrid bookings={bookings}/>
         </>
     );
 };

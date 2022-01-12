@@ -10,8 +10,7 @@ const BookingsGrid = ({bookings}) => {
 
     return (
         <>
-        <h1>BookingsGrid</h1>
-        {bookingsList}
+            {bookingsList}
         </>
     )
 }

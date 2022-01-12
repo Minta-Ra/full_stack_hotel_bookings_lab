@@ -6,7 +6,8 @@ function App() {
 
   return (
     <>
-      <h1>Hotel Bookings</h1>
+      <h1>All Hotel Bookings</h1>
+      <hr></hr>
       <BookingContainer/>
     </>
   );
