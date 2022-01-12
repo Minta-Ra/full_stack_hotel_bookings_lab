@@ -39,6 +39,3 @@ const BookingForm = ({addBooking}) => {
 };
 
 export default BookingForm;
-
-
-// False by default
