@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { getBookings } from '../components/BookingsService';
+import BookingsGrid from '../components/BookingsGrid';
 
 const BookingContainer = () => {
 
@@ -15,7 +16,10 @@ const BookingContainer = () => {
 
 
     return (
+        <>
         <h2>BookingContainer</h2>
+        <BookingsGrid bookings = {bookings}/>
+        </>
     );
 };
 
