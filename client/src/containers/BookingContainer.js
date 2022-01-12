@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { getBookings } from '../components/BookingsService';
+import {getBookings, deleteBooking} from '../components/BookingsService';
 import BookingsGrid from '../components/BookingsGrid';
 import BookingForm from '../components/BookingForm';
 
@@ -16,16 +16,25 @@ const BookingContainer = () => {
     },[]);
 
     const addBooking = (booking) => {
-        const temp = bookings.map(g => g);
+        let temp = bookings.map(booking => booking);
         temp.push(booking);
         setBookings(temp);
+    };
+
+    const delBooking = (id) => {
+        deleteBooking(id).then(() => {
+            let temp = bookings.map(booking => booking);
+            const toDelete = bookings.map(booking => booking._id).indexOf(id);
+            temp.splice(toDelete, 1);
+            setBookings(temp);
+        });
     };
 
 
     return (
         <>
             <BookingForm addBooking={addBooking}/>
-            <BookingsGrid bookings={bookings}/>
+            <BookingsGrid bookings={bookings} delBooking={delBooking}/>
         </>
     );
 };
