@@ -23,13 +23,13 @@ const BookingForm = ({addBooking}) => {
                 <h2>Add a new booking</h2>
 
                 <label>Guest name:</label>
-                <input value={formData.name} id="name" onChange={onChange} type="text"></input>
+                <input value={formData.name} id="name" onChange={onChange} type="text" required></input>
 
                 <label>Email address:</label>
-                <input value={formData.email} id="email" onChange={onChange} type="text"></input>
+                <input value={formData.email} id="email" onChange={onChange} type="text" required></input>
 
                 <label>Checked in?</label>
-                <input value={formData.check_in_status} id="status" onChange={onChange} type="checkbox"></input>
+                <input value={formData.check_in_status} id="status" onChange={onChange} type="checkbox" required></input>
             
                 <input type="submit" value="Save" id="save"/>
             </form>
